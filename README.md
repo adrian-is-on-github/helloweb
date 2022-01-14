@@ -18,10 +18,15 @@ Make a note of how you would tackle any future features e.g. adding a database o
 
 #Notes
 First steps: create an IAM user with programmatic access
+
 Creat IAT for Github for github actions
+
 Copy secrets to repo (s3 bucket name and region specified in CFN file)
+
 Create github actions yml
+
 Create CFN file to make the s3 bucket and return the value/url
+
 Prune code branches (used git init rather than clone)
 
 Next steps: 
@@ -30,4 +35,5 @@ add cloudfront distribution to CFN file and test
 
 Further steps:
 Adding rds to CFN file
+
 
