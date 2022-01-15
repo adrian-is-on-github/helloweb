@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: 2010-09-09
-Description: Coudformation template for an S3Bucket
+Description: Coudformation template for an S3Bucket with CLoudfront distribution
 Resources:
   S3Bucket:
     Type: AWS::S3::Bucket
@@ -10,13 +10,14 @@ Resources:
       WebsiteConfiguration:
         IndexDocument: index.html
         ErrorDocument: error.html
-    DeletionPolicy: Retain
-
 
   TestDistribution:
     Type: AWS::CloudFront::Distribution
     Properties:
-      DistributionConfig:
+      CustomOriginConfig:
+        OriginProtocolPolicy: http-only
+        HTTPPort: 80
+        HTTPSPort: 443
         Origins:
         - DomainName: http://adrians-helloweb-project.s3-website.eu-west-2.amazonaws.com/
           Id: helloweb-project
@@ -27,13 +28,14 @@ Resources:
         - ErrorCode: 403
           ResponseCode: 200
           ResponsePagePath: /index.html
-         DefaultCacheBehavior:
+        DefaultCacheBehavior:
           AllowedMethods:
           - GET
           - HEAD
           Compress: true
           TargetOriginId: helloweb-project
-          PriceClass: PriceClass_100
+          ViewerProtocolPolicy: allow-all
+        PriceClass: PriceClass_100
 Outputs:
   S3Bucket:
     Description: Bucket details
