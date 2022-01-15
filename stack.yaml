@@ -14,10 +14,7 @@ Resources:
   TestDistribution:
     Type: AWS::CloudFront::Distribution
     Properties:
-      CustomOriginConfig:
-        OriginProtocolPolicy: http-only
-        HTTPPort: 80
-        HTTPSPort: 443
+      DistributionConfig:
         Origins:
         - DomainName: http://adrians-helloweb-project.s3-website.eu-west-2.amazonaws.com/
           Id: helloweb-project

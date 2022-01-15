@@ -32,7 +32,6 @@ Prune code branches (started with git init rather than clone -whoops)
 Next steps: 
 done - test github actions - ***excluded all files except index.html sync
 in progress - add cloudfront distribution to CFN file and test
-add cfn to github actions
 
 Further steps:
 Deploy via github actions https://aws.amazon.com/blogs/opensource/deploy-aws-cloudformation-stacks-with-github-actions/
