@@ -27,11 +27,11 @@ Create github actions yml
 
 Create CFN file to make the s3 bucket and return the value/url
 
-Prune code branches (used git init rather than clone)
+Prune code branches (started with git init rather than clone -whoops)
 
 Next steps: 
-test github actions - ***filter only index.html to sync
-add cloudfront distribution to CFN file and test
+done - test github actions - ***excluded all files except index.html sync
+in progress - add cloudfront distribution to CFN file and test
 
 Further steps:
 Adding rds to CFN file

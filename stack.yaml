@@ -12,6 +12,28 @@ Resources:
         ErrorDocument: error.html
     DeletionPolicy: Retain
 
+
+  TestDistribution:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        Origins:
+        - DomainName: http://adrians-helloweb-project.s3-website.eu-west-2.amazonaws.com/
+          Id: helloweb-project
+        Enabled: 'true'
+        Comment: TestDistribution
+        DefaultRootObject: index.html
+        CustomErrorResponses:
+        - ErrorCode: 403
+          ResponseCode: 200
+          ResponsePagePath: /index.html
+         DefaultCacheBehavior:
+          AllowedMethods:
+          - GET
+          - HEAD
+          Compress: true
+          TargetOriginId: helloweb-project
+          PriceClass: PriceClass_100
 Outputs:
   S3Bucket:
     Description: Bucket details
