@@ -1,0 +1,19 @@
+- name: Configure AWS credentials
+      id: creds
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ secrets.AWS_REGION }}
+
+- name: Deploy Helloweb Project with CloudFormation
+      id: helloweb-deploy
+      uses: aws-actions/aws-cloudformation-github-deploy@v1
+      with:
+        name: Helloweb-project-deploy
+        template: stack.yaml
+        no-fail-on-empty-changeset: "1"
+        parameter-overrides: >-
+          Name=${{ steps.env-name.outputs.environment }},
+          Repository=https://github.com/${{ github.repository }},
+          OauthToken=${{ secrets.PAT_GITHUB }},
