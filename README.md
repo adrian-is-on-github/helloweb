@@ -38,4 +38,5 @@ Deploy via github actions https://aws.amazon.com/blogs/opensource/deploy-aws-clo
 Adding fancier stacks to CFN file
 Review IAM role for helloweb user
 Client billing alarm
+Redirect to https
 

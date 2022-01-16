@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: 2010-09-09
-Description: Coudformation template for an S3Bucket with CLoudfront distribution
+Description: Coudformation template for an S3Bucket with Cloudfront distribution
 Resources:
   S3Bucket:
     Type: AWS::S3::Bucket
