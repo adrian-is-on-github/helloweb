@@ -11,28 +11,41 @@ Resources:
         IndexDocument: index.html
         ErrorDocument: error.html
 
-  TestDistribution:
-    Type: AWS::CloudFront::Distribution
+  myDistribution:
+    Type: 'AWS::CloudFront::Distribution'
     Properties:
       DistributionConfig:
         Origins:
         - DomainName: http://adrians-helloweb-project.s3-website.eu-west-2.amazonaws.com/
-          Id: helloweb-project
+          Id: helloweb-s3-website
+          CustomOriginConfig:
+            HTTPPort: '80'
+            HTTPSPort: '443'
+            OriginProtocolPolicy: http-only
         Enabled: 'true'
-        Comment: TestDistribution
         DefaultRootObject: index.html
-        CustomErrorResponses:
-        - ErrorCode: 403
-          ResponseCode: 200
-          ResponsePagePath: /index.html
         DefaultCacheBehavior:
-          AllowedMethods:
-          - GET
-          - HEAD
-          Compress: true
-          TargetOriginId: helloweb-project
+          TargetOriginId: helloweb-s3-website
+          SmoothStreaming: 'false'
+          ForwardedValues:
+            QueryString: 'false'
+            Cookies:
+              Forward: all
           ViewerProtocolPolicy: allow-all
-        PriceClass: PriceClass_100
+        CustomErrorResponses:
+        - ErrorCode: '404'
+          ResponsePagePath: "error.html"
+          ResponseCode: '200'
+          ErrorCachingMinTTL: '30'
+        PriceClass: PriceClass_200
+        Restrictions:
+          GeoRestriction:
+            RestrictionType: whitelist
+            Locations:
+            - GB
+            - FR
+        ViewerCertificate:
+          CloudFrontDefaultCertificate: 'true'
 Outputs:
   S3Bucket:
     Description: Bucket details

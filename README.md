@@ -36,5 +36,6 @@ in progress - add cloudfront distribution to CFN file and test
 Further steps:
 Deploy via github actions https://aws.amazon.com/blogs/opensource/deploy-aws-cloudformation-stacks-with-github-actions/
 Adding fancier stacks to CFN file
-
+Review IAM role for helloweb user
+Client billing alarm
 
