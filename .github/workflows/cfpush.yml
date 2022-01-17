@@ -4,9 +4,10 @@ on:
   workflow_dispatch:
 
 jobs:
-  - name: auth and deploy
+  auth-and-deploy:
+  name: deploy to cfn
   runs-on: ubuntu-latest  
-  steps:
+    steps:
   
     - name: checkout
     uses: actions/checkout@v2
