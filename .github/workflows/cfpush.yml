@@ -20,7 +20,7 @@ jobs:
       aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       aws-region: ${{ secrets.AWS_REGION}}
     
-  - name:cfn-deploy
+  - name: cfn-deploy
     uses: aws-actions/aws-cloudformation-github-deploy@v1
     with:
       name: Helloweb-project-deploy
