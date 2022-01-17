@@ -16,27 +16,30 @@ The repository doesn't need to contain functioning code but you should demonstra
 Make a note of how you would tackle any future features e.g. adding a database or creating an API.
 
 
-#Notes
-First steps: create an IAM user with programmatic access
+# notes
+*First steps: create an IAM user with programmatic access
 
 Creat IAT for Github for github actions
 
 Copy secrets to repo (s3 bucket name and region specified in CFN file)
 
-Create github actions yml
+Edit github actions ymls
 
 Create CFN file to make the s3 bucket and return the value/url
 
-Prune code branches (started with git init rather than clone -whoops)
+*Next steps:
 
-Next steps: 
-done - test github s3push actions - *excluded all yml yaml md files from syncing
-done - add cloudfront distribution to CFN file and test
-done - Deploy stack via github actions
+Done - test github s3push actions - *excluded all yml yaml md files from syncing
 
-Further steps:
+Done - add cloudfront distribution to CFN file and test
 
-include s3push as last step of stack deployment
+Done - Deploy stack via github actions
+
+*Further improvments:
+
+Include s3push as last step of stack deployment
+
+Return cfront and s3 bucket details to github actions console
 
 Potential to add fancier stacks to CFN file - a database and lambda functions triggered by API gateway
 
