@@ -1,5 +1,5 @@
 name: cf-push
-  
+
 on:
   workflow_dispatch:
 
