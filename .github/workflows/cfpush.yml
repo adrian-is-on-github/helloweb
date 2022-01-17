@@ -24,4 +24,4 @@ jobs:
           parameter-overrides: >-
             Name=${{ steps.env-name.outputs.environment }},
             Repository=https://github.com/${{ github.repository }},
-            OauthToken=${{ secrets.PAT_GITHUB }},
+            OauthToken=${{ secrets.PAT_GITHUB }}
