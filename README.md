@@ -30,13 +30,17 @@ Create CFN file to make the s3 bucket and return the value/url
 Prune code branches (started with git init rather than clone -whoops)
 
 Next steps: 
-done - test github actions - *excluded all yml yaml md files from syncing
+done - test github s3push actions - *excluded all yml yaml md files from syncing
 done - add cloudfront distribution to CFN file and test
 
 Further steps:
-in progress - Deploy via github actions https://aws.amazon.com/blogs/opensource/deploy-aws-cloudformation-stacks-with-github-actions/
-Adding fancier stacks to CFN file
-Review IAM role for helloweb user
-Create client billing alarm, cost allocation tags
-Add region filters and pricing level for Cloudfront
 
+In progress - Deploy stack via github actions https://aws.amazon.com/blogs/opensource/deploy-aws-cloudformation-stacks-with-github-actions/
+
+Potential to add fancier stacks to CFN file - a database and lambda functions triggered by API gateway
+
+Review IAM role for helloweb user
+
+Create client billing alarm, cost allocation tags
+
+Add region filters and pricing level for Cloudfront
