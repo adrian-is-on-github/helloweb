@@ -40,7 +40,7 @@ include s3push as last step of stack deployment
 
 Potential to add fancier stacks to CFN file - a database and lambda functions triggered by API gateway
 
-Review IAM role for helloweb user
+Minimize permissions for helloweb IAM user
 
 Create client billing alarm, cost allocation tags
 
