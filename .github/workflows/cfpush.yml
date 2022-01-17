@@ -21,7 +21,7 @@ jobs:
           name: Helloweb-project-deploy
           template: stack.yaml
           no-fail-on-empty-changeset: "1"
-          parameter-overrides: >-
-            OauthToken=${{ secrets.PAT_GITHUB }}
+#          parameter-overrides: >-
+#            OauthToken=${{ secrets.PAT_GITHUB }}
 #            Name=${{ steps.env-name.outputs.environment }},
 #            Repository=https://github.com/${{ github.repository }},
