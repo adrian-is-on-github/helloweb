@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  name: auth and deploy
+  - name: auth and deploy
   runs-on: ubuntu-latest  
   steps:
   
