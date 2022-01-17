@@ -32,10 +32,11 @@ Prune code branches (started with git init rather than clone -whoops)
 Next steps: 
 done - test github s3push actions - *excluded all yml yaml md files from syncing
 done - add cloudfront distribution to CFN file and test
+done - Deploy stack via github actions
 
 Further steps:
 
-In progress - Deploy stack via github actions https://aws.amazon.com/blogs/opensource/deploy-aws-cloudformation-stacks-with-github-actions/
+include s3push as last step of stack deployment
 
 Potential to add fancier stacks to CFN file - a database and lambda functions triggered by API gateway
 
