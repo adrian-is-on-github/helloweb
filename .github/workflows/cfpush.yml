@@ -4,12 +4,14 @@ on:
   workflow_dispatch:
 
 jobs:
-  name: Stack Deploy
+  name: auth and deploy
   runs-on: ubuntu-latest  
   steps:
   
   - name: checkout
     uses: actions/checkout@v2
+      with:
+        ref: main
     
   - name: creds
     uses: aws-actions/configure-aws-credentials@v1
